@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Hefram Asasta Indonesia - Spesialis Pengolahan Air</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0066cc 0%, #003366 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .logo-placeholder {
+            width: 120px;
+            height: 120px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .logo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .company-name {
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            font-size: 18px;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            color: #0066cc;
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e6f2ff;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background-color: #0066cc;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .about-image {
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(0, 51, 102, 0.7)),
+                url('foto/KANTOR.jpeg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            min-height: 300px;
+        }
+
+        .vision-mission {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .vision,
+        .mission {
+            background-color: #e6f2ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #0066cc;
+        }
+
+        .vision h3,
+        .mission h3 {
+            color: #0066cc;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .products-services {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .product-card,
+        .service-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 4px solid #0066cc;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover,
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card h3,
+        .service-card h3 {
+            color: #0066cc;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .advantages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .advantage {
+            background-color: #e6f2ff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .advantage:hover {
+            transform: translateY(-5px);
+            background-color: #cce5ff;
+        }
+
+        .advantage h3 {
+            color: #0066cc;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background-color: #e6f2ff;
+            border-radius: 8px;
+        }
+
+        .contact-item h3 {
+            color: #0066cc;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #0066cc;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #004d99;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        @media (max-width: 768px) {
+
+            .about-grid,
+            .vision-mission,
+            .products-services {
+                grid-template-columns: 1fr;
+            }
+
+            .company-name {
+                font-size: 22px;
+            }
+
+            .logo-placeholder {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-section">
+            <div class="logo-placeholder">
+                <img src="foto/hefram.jpg" alt="Logo PT Hefram Asasta Indonesia">
+            </div>
+            <div>
+                <h1 class="company-name">PT Hefram Asasta Indonesia</h1>
+                <p class="tagline">Spesialis Pengolahan Air Bersih dan Air Limbah</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2 class="section-title">Tentang Kami</h2>
+            <div class="about-grid">
+                <div>
+                    <p>PT Hefram Asasta Indonesia adalah perusahaan yang bergerak di bidang <strong>pengolahan air
+                            bersih dan air limbah</strong>. Perusahaan ini resmi berdiri sejak tahun
+                        <strong>2019</strong>, dengan kantor pusat di kawasan <strong>Cibinong, Bogor, Jawa
+                            Barat</strong>.
+                    </p>
+                    <p>Awalnya dikenal sebagai <strong>PT Beone Cakra Indonesia</strong>, lalu berkembang menjadi Hefram
+                        Asasta Indonesia untuk memperkuat identitasnya dalam memberikan solusi teknologi lingkungan.</p>
+                    <p>Dengan komitmen pada inovasi dan keberlanjutan, PT Hefram Asasta menyediakan berbagai produk dan
+                        layanan terkait <strong>Water Treatment Plant (WTP)</strong> dan <strong>Instalasi Pengolahan
+                            Air Limbah (IPAL)</strong>.</p>
+                </div>
+                <div class="about-image"></div>
+
+            </div>
+
+            <h3 class="section-title">Sejarah Perusahaan</h3>
+            <p>PT Hefram Asasta Indonesia didirikan pada tahun <strong>2019</strong> di Cibinong, Kabupaten Bogor, Jawa
+                Barat. Pada awalnya perusahaan ini dikenal dengan nama <strong>PT Beone Cakra Indonesia</strong>, yang
+                berfokus pada penyediaan produk dan layanan dasar di bidang pengolahan air. Seiring dengan meningkatnya
+                kebutuhan industri akan teknologi pengolahan air yang lebih modern, perusahaan kemudian melakukan
+                transformasi dan resmi berganti nama menjadi <strong>PT Hefram Asasta Indonesia</strong>.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Visi dan Misi</h2>
+            <div class="vision-mission">
+                <div class="vision">
+                    <h3>Visi</h3>
+                    <p>Menjadi perusahaan terdepan dalam penyediaan solusi pengolahan air yang berkualitas dan ramah
+                        lingkungan, serta turut menjaga kelestarian sumber daya air bagi generasi mendatang.</p>
+                </div>
+                <div class="mission">
+                    <h3>Misi</h3>
+                    <ol>
+                        <li>Memberikan layanan terbaik dalam desain, konstruksi, dan pemeliharaan sistem pengolahan air.
+                        </li>
+                        <li>Menghadirkan produk berkualitas tinggi dengan harga kompetitif.</li>
+                        <li>Menyediakan teknologi inovatif untuk meningkatkan efisiensi dan efektivitas pengolahan air.
+                        </li>
+                        <li>Mendukung pelanggan dengan layanan purna jual yang profesional dan responsif.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Produk dan Layanan</h2>
+            <div class="products-services">
+                <div>
+                    <h3 class="section-title">Produk Utama</h3>
+                    <div class="product-card">
+                        <h3>Peralatan Water Treatment</h3>
+                        <p>Diffuser Fine Bubble, Tube Settler Lamella, Media Sarang Tawon (Honeycomb), Strainer Nozzle,
+                            Bioball, Tabung FRP, Root Blower, Agitator Mixer.</p>
+                    </div>
+                    <div class="product-card">
+                        <h3>Instrumen Analisa Air</h3>
+                        <p>PT Hefram adalah <strong>distributor resmi HACH Instruments</strong> di Indonesia,
+                            menyediakan spectrophotometer, turbidimeter, pH meter, DO meter, colorimeter, dan reagen
+                            analisa air.</p>
+                    </div>
+                    <div class="product-card">
+                        <h3>Bahan Kimia & Biologis</h3>
+                        <p>Kaporit, PAC, soda ash, tawas, karbon aktif, pasir silika, hingga bakteri pengurai limbah
+                            aerobik maupun anaerobik.</p>
+                    </div>
+                    <div class="product-card">
+                        <h3>Sampling Tools</h3>
+                        <p>Whirl-Pak sampling bags untuk pengambilan sampel steril.</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="section-title">Layanan Utama</h3>
+                    <div class="service-card">
+                        <h3>Konstruksi WTP & IPAL</h3>
+                        <p>Desain, instalasi, hingga pemeliharaan sistem pengolahan air bersih dan limbah.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Konsultasi Teknis</h3>
+                        <p>Perencanaan, audit, dan evaluasi pengolahan air.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Training & Purna Jual</h3>
+                        <p>Pelatihan penggunaan peralatan, instalasi, serta dukungan teknis berkelanjutan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Keunggulan Kami</h2>
+            <div class="advantages">
+                <div class="advantage">
+                    <h3>Pengalaman dan Keahlian</h3>
+                    <p>Dalam menangani berbagai proyek pengolahan air lintas industri.</p>
+                </div>
+                <div class="advantage">
+                    <h3>Produk Berkualitas</h3>
+                    <p>Dengan sertifikasi dan standar internasional.</p>
+                </div>
+                <div class="advantage">
+                    <h3>Mitra Resmi HACH</h3>
+                    <p>Terpercaya dalam penyediaan instrumen laboratorium dan analisis air.</p>
+                </div>
+                <div class="advantage">
+                    <h3>Dukungan Teknis Profesional</h3>
+                    <p>Tim ahli siap membantu pelanggan.</p>
+                </div>
+                <div class="advantage">
+                    <h3>Komitmen Lingkungan</h3>
+                    <p>Teknologi ramah lingkungan dan mendukung keberlanjutan.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Lokasi & Kontak</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div>
+                        <h3>Alamat</h3>
+                        <p>Pergudangan LMC, Ruko Salsabila, Jl. Raya Cikaret No. 91/105, Pabuaran, Kecamatan Cibinong,
+                            Kabupaten Bogor, Jawa Barat.</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div>
+                        <h3>Telepon</h3>
+                        <p>(021) 8372-2169</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div>
+                        <h3>WhatsApp</h3>
+                        <p>+62 889-2118-861</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div>
+                        <h3>Email</h3>
+                        <p>hefram.id@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div>
+                        <h3>Website</h3>
+                        <p><a href="https://hefram.com" style="color: #0066cc;">https://hefram.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <a href="https://api.whatsapp.com/send/?phone=628892118861&text&type=phone_number&app_absent=0"
+                class="btn">Hubungi Kami</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 PT Hefram Asasta Indonesia. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
